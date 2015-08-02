@@ -14,7 +14,8 @@ class TAAMainTableViewController: UITableViewController {
     private let cellIdentifier = "CellIdentifier"
     
     private let titles: [String] = ["Basic", "Update Constraints",
-        "Remake Constraints", "Using Constants", "Composite Edges"]
+        "Remake Constraints", "Using Constants", "Composite Edges",
+        "Aspect Fit"]
     
     //MARK: - Life cycle
     
@@ -69,6 +70,10 @@ class TAAMainTableViewController: UITableViewController {
             navigationController?.pushViewController(viewController, animated: true)
         case 4:
             let viewController = TAACompositeEdgesViewController()
+            viewController.title = titles[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        case 5:
+            let viewController = TAAAspectFitViewController()
             viewController.title = titles[indexPath.row]
             navigationController?.pushViewController(viewController, animated: true)
         default:

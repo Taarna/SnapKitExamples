@@ -14,6 +14,8 @@
 		8D3A52C81B6E77510058B366 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A52C71B6E77510058B366 /* UIColor+Random.swift */; };
 		8D3A52CB1B6E8B670058B366 /* TAACompositeEdgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A52CA1B6E8B670058B366 /* TAACompositeEdgesView.swift */; };
 		8D3A52CD1B6E8B8B0058B366 /* TAAVompositeEdgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A52CC1B6E8B8B0058B366 /* TAAVompositeEdgesViewController.swift */; };
+		8D3A52D01B6E90AD0058B366 /* TAAAspectFitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A52CF1B6E90AD0058B366 /* TAAAspectFitView.swift */; };
+		8D3A52D21B6E90CA0058B366 /* TAAAspectFitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3A52D11B6E90CA0058B366 /* TAAAspectFitViewController.swift */; };
 		8D8379341B61678C00A476A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8379331B61678C00A476A2 /* AppDelegate.swift */; };
 		8D83793B1B61678C00A476A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D83793A1B61678C00A476A2 /* Images.xcassets */; };
 		8D83793E1B61678C00A476A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D83793C1B61678C00A476A2 /* LaunchScreen.xib */; };
@@ -45,6 +47,8 @@
 		8D3A52C71B6E77510058B366 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
 		8D3A52CA1B6E8B670058B366 /* TAACompositeEdgesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAACompositeEdgesView.swift; sourceTree = "<group>"; };
 		8D3A52CC1B6E8B8B0058B366 /* TAAVompositeEdgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAVompositeEdgesViewController.swift; sourceTree = "<group>"; };
+		8D3A52CF1B6E90AD0058B366 /* TAAAspectFitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAAspectFitView.swift; sourceTree = "<group>"; };
+		8D3A52D11B6E90CA0058B366 /* TAAAspectFitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAAspectFitViewController.swift; sourceTree = "<group>"; };
 		8D83792E1B61678C00A476A2 /* SnapKitExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapKitExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8379321B61678C00A476A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8379331B61678C00A476A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 			path = "Composite Edges";
 			sourceTree = "<group>";
 		};
+		8D3A52CE1B6E909B0058B366 /* Aspect Fit */ = {
+			isa = PBXGroup;
+			children = (
+				8D3A52CF1B6E90AD0058B366 /* TAAAspectFitView.swift */,
+				8D3A52D11B6E90CA0058B366 /* TAAAspectFitViewController.swift */,
+			);
+			path = "Aspect Fit";
+			sourceTree = "<group>";
+		};
 		8D8379251B61678C00A476A2 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +167,7 @@
 				8DFA7F0B1B6AB3E400214478 /* Remake Constraints */,
 				8D3A52C11B6E73DC0058B366 /* Using Constants */,
 				8D3A52C91B6E8B560058B366 /* Composite Edges */,
+				8D3A52CE1B6E909B0058B366 /* Aspect Fit */,
 				8D8379531B6168D400A476A2 /* MainTableViewController */,
 				8D8379311B61678C00A476A2 /* Supporting Files */,
 			);
@@ -379,11 +393,13 @@
 				8D8379551B61692600A476A2 /* TAAMainTableViewController.swift in Sources */,
 				8D8379341B61678C00A476A2 /* AppDelegate.swift in Sources */,
 				8DFA7F0F1B6AB42000214478 /* TAARemakeConstraintsViewController.swift in Sources */,
+				8D3A52D01B6E90AD0058B366 /* TAAAspectFitView.swift in Sources */,
 				8DFA7F0D1B6AB40700214478 /* TAARemakeConstraintsView.swift in Sources */,
 				8D3A52C31B6E73F40058B366 /* TAAUsingConstantsView.swift in Sources */,
 				8D3A52CD1B6E8B8B0058B366 /* TAAVompositeEdgesViewController.swift in Sources */,
 				8D3A52C81B6E77510058B366 /* UIColor+Random.swift in Sources */,
 				8D3A52C51B6E740C0058B366 /* TAAUsingConstantsViewController.swift in Sources */,
+				8D3A52D21B6E90CA0058B366 /* TAAAspectFitViewController.swift in Sources */,
 				8D3675A71B66E04100CB1118 /* TAAUpdateConstraintsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
