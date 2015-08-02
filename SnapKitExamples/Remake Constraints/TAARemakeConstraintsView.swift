@@ -10,7 +10,16 @@ import UIKit
 
 class TAARemakeConstraintsView: UIView {
 
-    private let movingButton = UIButton()
+    private lazy var movingButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("Move Me!", forState: .Normal)
+        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        button.layer.borderColor = UIColor.greenColor().CGColor
+        button.layer.borderWidth = 3
+        button.addTarget(self, action: "movingButtonTapped:", forControlEvents: .TouchUpInside)
+        
+        return button
+    }()
     private var topLeft = true
     
     //MARK: - Sizes
@@ -39,14 +48,10 @@ class TAARemakeConstraintsView: UIView {
     private func initializeElements() {
         let superview = self
         
-        movingButton.setTitle("Move Me!", forState: .Normal)
-        movingButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        movingButton.layer.borderColor = UIColor.greenColor().CGColor
-        movingButton.layer.borderWidth = 3
-        movingButton.addTarget(self, action: "movingButtonTapped:", forControlEvents: .TouchUpInside)
-        
+        //button
         self.addSubview(movingButton)
         
+        //button constraints
         movingButton.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(kButtonSize)
             make.height.equalTo(kButtonSize)

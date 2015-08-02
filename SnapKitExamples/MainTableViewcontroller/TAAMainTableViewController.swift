@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SnapKit
 
 class TAAMainTableViewController: UITableViewController {
     
     private let cellIdentifier = "CellIdentifier"
     
     private let titles: [String] = ["Basic", "Update Constraints",
-        "Remake Constraints"]
+        "Remake Constraints", "Using Constants", "Composite Edges"]
     
     //MARK: - Life cycle
     
@@ -60,6 +61,14 @@ class TAAMainTableViewController: UITableViewController {
             navigationController?.pushViewController(viewController, animated: true)
         case 2:
             let viewController = TAARemakeConstraintsViewController()
+            viewController.title = titles[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        case 3:
+            let viewController = TAAUsingConstantsViewController()
+            viewController.title = titles[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        case 4:
+            let viewController = TAACompositeEdgesViewController()
             viewController.title = titles[indexPath.row]
             navigationController?.pushViewController(viewController, animated: true)
         default:

@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import SnapKit
 
 class TAABasicView: UIView {
     
-    private let view1 = UIView()
-    private let view2 = UIView()
-    private let view3 = UIView()
+    private lazy var view1: UIView = self.initializeView()
+    private lazy var view2: UIView = self.initializeView()
+    private lazy var view3: UIView = self.initializeView()
     
     //MARK: - Sizes
     
@@ -42,27 +41,15 @@ class TAABasicView: UIView {
         let superview = self
         
         //view1
-        view1.backgroundColor = UIColor.greenColor()
-        view1.layer.borderColor = UIColor.blackColor().CGColor
-        view1.layer.borderWidth = 2
-        
         self.addSubview(view1)
         
         //view2
-        view2.backgroundColor = UIColor.redColor()
-        view2.layer.borderColor = UIColor.blackColor().CGColor
-        view2.layer.borderWidth = 2
-        
         self.addSubview(view2)
         
         //view3
-        view3.backgroundColor = UIColor.blueColor()
-        view3.layer.borderColor = UIColor.blackColor().CGColor
-        view3.layer.borderWidth = 2
-        
         self.addSubview(view3)
         
-        
+        //view1
         view1.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(superview.snp_top).offset(kPadding)
             make.left.equalTo(superview.snp_left).offset(kPadding)
@@ -75,6 +62,7 @@ class TAABasicView: UIView {
             make.height.equalTo(view3)
         }
         
+        //view2
         view2.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(superview.snp_top).offset(kPadding)
             make.left.equalTo(view1.snp_right).offset(kPadding)
@@ -87,6 +75,7 @@ class TAABasicView: UIView {
             make.height.equalTo(view3)
         }
         
+        //view3
         view3.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(view1.snp_bottom).offset(kPadding)
             make.left.equalTo(superview.snp_left).offset(kPadding)
@@ -96,5 +85,16 @@ class TAABasicView: UIView {
             make.height.equalTo(view1)
             make.height.equalTo(view2)
         }
+    }
+    
+    //MARK: Initialize buttons
+    
+    private func initializeView() -> UIView {
+        var view = UIView()
+        view.backgroundColor = UIColor.randomColor()
+        view.layer.borderColor = UIColor.blackColor().CGColor
+        view.layer.borderWidth = 2
+        
+        return view
     }
 }

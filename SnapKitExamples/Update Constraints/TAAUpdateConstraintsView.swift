@@ -10,7 +10,16 @@ import UIKit
 
 class TAAUpdateConstraintsView: UIView {
 
-    private let growingButton = UIButton()
+    private lazy var growingButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("Grow Me!", forState: .Normal)
+        button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        button.layer.borderColor = UIColor.greenColor().CGColor
+        button.layer.borderWidth = 3
+        button.addTarget(self, action: "growingButtonTapped:", forControlEvents: .TouchUpInside)
+        
+        return button
+    }()
     
     //MARK: Sizes
     
@@ -39,22 +48,16 @@ class TAAUpdateConstraintsView: UIView {
         let superview = self
         
         //button
-        growingButton.setTitle("Grow Me!", forState: .Normal)
-        growingButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        growingButton.layer.borderColor = UIColor.greenColor().CGColor
-        growingButton.layer.borderWidth = 3
-        growingButton.addTarget(self, action: "growingButtonTapped:", forControlEvents: .TouchUpInside)
-        
         self.addSubview(growingButton)
         
         //button constraints
         growingButton.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(superview)
-            
-            make.width.greaterThanOrEqualTo(self.kButtonWidthHeight.width).priorityLow()
+
+            make.width.equalTo(kButtonWidthHeight.width).priorityLow()
+            make.height.equalTo(kButtonWidthHeight.height).priorityLow()
+
             make.width.lessThanOrEqualTo(superview)
-            
-            make.height.greaterThanOrEqualTo(self.kButtonWidthHeight.height).priorityLow()
             make.height.lessThanOrEqualTo(superview)
         }
     }
@@ -62,6 +65,7 @@ class TAAUpdateConstraintsView: UIView {
     //MARK: Button action
     
     func growingButtonTapped(sender: UIButton!) {
+        println("growingButtonTapped")
         self.kButtonWidthHeight = CGSizeMake(self.kButtonWidthHeight.width * 1.3, self.kButtonWidthHeight.height * 1.3);
         
         // tell constraints they need updating
@@ -72,6 +76,7 @@ class TAAUpdateConstraintsView: UIView {
         
         UIView.animateWithDuration(0.4, animations: {
             self.layoutIfNeeded()
+            println("animateWithDuration")
             }, completion: { finished in
         })
     }
@@ -79,17 +84,17 @@ class TAAUpdateConstraintsView: UIView {
     //MARK: - Update constraints
     
     override func updateConstraints() {
-        
+        println("updateConstrains()")
         let superview = self;
         
         growingButton.snp_updateConstraints { (make) -> Void in
             make.center.equalTo(superview)
             
             make.width.lessThanOrEqualTo(superview)
-            make.width.equalTo(self.kButtonWidthHeight.width).priorityLow()
-            
+            make.width.equalTo(kButtonWidthHeight.width).priorityLow()
+        
             make.height.lessThanOrEqualTo(superview)
-            make.height.equalTo(self.kButtonWidthHeight.height).priorityLow()
+            make.height.equalTo(kButtonWidthHeight.height).priorityLow()
         }
         
         super.updateConstraints()
