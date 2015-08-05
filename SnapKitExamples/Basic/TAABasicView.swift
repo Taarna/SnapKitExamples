@@ -87,7 +87,7 @@ class TAABasicView: UIView {
         }
     }
     
-    //MARK: Initialize buttons
+    //MARK: Initialize view
     
     private func initializeView() -> UIView {
         var view = UIView()

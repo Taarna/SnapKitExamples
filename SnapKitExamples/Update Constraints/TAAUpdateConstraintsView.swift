@@ -65,7 +65,6 @@ class TAAUpdateConstraintsView: UIView {
     //MARK: Button action
     
     func growingButtonTapped(sender: UIButton!) {
-        println("growingButtonTapped")
         self.kButtonWidthHeight = CGSizeMake(self.kButtonWidthHeight.width * 1.3, self.kButtonWidthHeight.height * 1.3);
         
         // tell constraints they need updating
@@ -76,7 +75,6 @@ class TAAUpdateConstraintsView: UIView {
         
         UIView.animateWithDuration(0.4, animations: {
             self.layoutIfNeeded()
-            println("animateWithDuration")
             }, completion: { finished in
         })
     }
@@ -84,7 +82,6 @@ class TAAUpdateConstraintsView: UIView {
     //MARK: - Update constraints
     
     override func updateConstraints() {
-        println("updateConstrains()")
         let superview = self;
         
         growingButton.snp_updateConstraints { (make) -> Void in

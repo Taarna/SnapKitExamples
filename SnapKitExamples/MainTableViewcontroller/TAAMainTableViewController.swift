@@ -15,7 +15,7 @@ class TAAMainTableViewController: UITableViewController {
     
     private let titles: [String] = ["Basic", "Update Constraints",
         "Remake Constraints", "Using Constants", "Composite Edges",
-        "Aspect Fit"]
+        "Aspect Fit", "Margins"]
     
     //MARK: - Life cycle
     
@@ -74,6 +74,10 @@ class TAAMainTableViewController: UITableViewController {
             navigationController?.pushViewController(viewController, animated: true)
         case 5:
             let viewController = TAAAspectFitViewController()
+            viewController.title = titles[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        case 6:
+            let viewController = TAAMarginsViewController()
             viewController.title = titles[indexPath.row]
             navigationController?.pushViewController(viewController, animated: true)
         default:
